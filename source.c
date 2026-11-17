@@ -24,9 +24,8 @@ return sum_digit(num, num1, num3 * 10);
 char Maze(char arru[8][8],int i ,int j)
 {
 if(i == 7 && j == 7){return 1;}
-if(arru[i + 1][j] == ' '){++i;}
-if(arru[i][j + 1] == ' '){++j;}
-if(arru[i - 1][j] == ' '){--i;}
-if(arru[i][j - 1] == ' '){--j;}
-return Maze(arru, i, j);
+if(arru[i + 1][j] == ' ' && i > 0 && i < 8){++i; printf(" %d %d", i, j); return Maze(arru, i, j);}
+if(arru[i][j + 1] == ' ' && j > 0 && j < 8){++j; printf(" %d %d", i, j); return Maze(arru, i, j);}
+if(arru[i - 1][j] == ' ' && i > 0 && i < 8){--i; printf(" %d %d", i, j); return Maze(arru, i, j);}
+if(arru[i][j - 1] == ' ' && j > 0 && j < 8){--j; printf(" %d %d", i, j); return Maze(arru, i, j);}
 }
